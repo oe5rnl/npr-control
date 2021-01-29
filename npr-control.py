@@ -3,7 +3,7 @@
 * 2021 - Reinhold Autengruber, OE5RNL
 *        Manfred Autengruber, OE5NVL
 *
-* A very simple Python interface for NPR Controly py python.
+* A very simple Python control interface for New Packet radio (NPR).
 * 
 */
 
