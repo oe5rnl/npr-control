@@ -1,7 +1,8 @@
 
 /* Copyright (C)
-* 2021 - Reinhold Autengruber, OE5RNL
-*        Manfred Autengruber, OE5NVL
+* 2021-01-30 
+*  Reinhold Autengruber, OE5RNL
+*  Manfred Autengruber,  OE5NVL
 *
 * A very simple Python control interface for New Packet radio (NPR).
 * 
