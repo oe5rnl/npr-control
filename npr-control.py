@@ -336,51 +336,9 @@ def main():
 
   #print(npr.reset_to_default())
 
-  print(npr.display_config())
+  #print(npr.display_config())
 
 if __name__ == "__main__":
   # execute only if run as a script
   main()
-
-
-# ser = serial.Serial()
-# #ser.close()
-# ser.port = "/dev/ttyACM0"
-# #ser.port = "/dev/ttydummy"
-# ser.baudrate = 921600 
-# ser.open()
-# print(ser)
-
-
-# def _delay():
-#   time.sleep(0.01)
-
-
-# def sendCommand(cmd):
-
-#   for element in cmd:
-#     #print(element, end='') 
-#     #print(element.encode("utf-8"))
-#     ser.write(element.encode("utf-8"))
-#     _delay()
-
-#   ser.write(chr(13).encode("utf-8"))
-#   #print("\n") 
-  
- 
-# sendCommand("set modulation 11") 
-# time.sleep(10)
-# sendCommand("display config") 
-# #sendCommand("status") 
-# #ser.write(chr(3).encode("utf-8"))
-
-
-# time.sleep(0.5)
-
-# s =''
-# while ser.inWaiting() > 0:
-#    s += ser.read(1).decode("utf-8")
-
-# print("|"+s+"|")
-
 
