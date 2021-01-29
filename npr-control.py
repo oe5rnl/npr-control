@@ -201,7 +201,6 @@ class Npr():
     else:
       return "ERROR ip Adress: "+ ip
 
-  # 32  ???
   def set_master_IP_size(self,num):
     if ((num>0) and (num<=32)):
       self.sendCommand("set master_IP_size "+ str(num))
@@ -209,7 +208,6 @@ class Npr():
     else:
       return "ERROR ip num: " + str(num)
 
-  # 5 ????
   def set_client_req_size(self,num):
     if ((num>0) and (num<=5)):
       self.sendCommand("set client_req_size "+ str(num))
@@ -217,8 +215,6 @@ class Npr():
     else:
       return "ERROR set_client_req_size num: " + str(num)
 
-
-  # testen
   def set_master_IP_down(self, ip):
     if validate_ip(ip):
       self.sendCommand("set master_IP_down "+ ip)
@@ -226,7 +222,6 @@ class Npr():
       self.getResponse()
     else:
       return "ERROR ip Adress: "+ ip
-
 
   def set_DHCP_active(self, yn):
     if ((yn=="yes") or (yn=="no")):
@@ -280,18 +275,14 @@ class Npr():
     else:
       return "ERROR: set_radio_netw_id: "+str(v)
 
-
-  # testen
   def save(self):
     self.sendCommand("save")
     time.sleep(1)
     return self.getResponse() 
 
-  #testen
   def reboot(self):
     self.sendCommand("reboot")
 
-  #testen
   def reset_to_default(self):
     self.sendCommand("reset_to_default")
     time.sleep(2)
