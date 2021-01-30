@@ -1,16 +1,17 @@
 
-/* Copyright (C)
-* 2021-01-30 
-*  Reinhold Autengruber, OE5RNL
-*  Manfred Autengruber,  OE5NVL
-*
-* A very simple Python control interface for New Packet radio (NPR).
-* 
-* V0.1 
-* - more testing needed
-* - ugly time.sleep
-*
-*/
+# Copyright (C)
+# 2021-01-30 
+#  Reinhold Autengruber, OE5RNL
+#  Manfred Autengruber,  OE5NVL
+#
+# A very simple Python control interface for New Packet radio (NPR).
+# 
+# V0.1a 2021-01-30
+# - more testing needed
+# - ugly time.sleep
+#
+#
+
 
 
 import serial
@@ -52,18 +53,16 @@ class Npr():
     self.ser.baudrate = 921600 
     self.ser.open()
 
-
   def sendCommand(self,cmd):    
     for element in cmd:
       self.ser.write(element.encode("utf-8"))
-      time.sleep(0.05)
+      time.sleep(0.01)
     self.ser.write(chr(13).encode("utf-8"))
     
   def getResponse(self):
     s =''
-    #print (self.ser.inWaiting())
+    time.sleep(0.1)
     while self.ser.inWaiting() > 0:
-       #print(s)
        s += self.ser.read(1).decode("utf-8")  
        #time.sleep(0.01)
     return s
@@ -96,9 +95,8 @@ class Npr():
 
   def display_config(self):
     self.sendCommand("display config")
-    time.sleep(0.3)
+    time.sleep(0)
     return self.getResponse()
-
 
   def display_DHCP_ARP(self):
     self.sendCommand("display DHCP_ARP")
@@ -124,7 +122,6 @@ class Npr():
       return self.getResponse()
     else:
       return "ERROR: set is_master: "+yn
-
 
   # offen
   def set_master_FDD(self,m):
@@ -297,17 +294,17 @@ class Npr():
 def main():
 
   npr = Npr()
-  npr.init("/dev/ttydummy")
-  #npr.init("/dev/ttyACM0")
+  #npr.init("/dev/ttydummy")
+  npr.init("/dev/ttyACM0")
 
-  #print(npr.version())
+  print(npr.version())
   #print(npr.radio("off"))
   #print(npr.status())
   #print(npr.who())
   #print(npr.display_config())
   #print(npr.display_DHCP_ARP())
   #print(npr.TX_test(5))
-  #print(npr.set_callsign("OE5RNL"))
+  print(npr.set_callsign("OE5RNL"))
   #print(npr.set_is_master("no"))
   #print(npr.set_master_FDD(m))
   #print(npr.set_Eth_mode(5))
@@ -332,7 +329,7 @@ def main():
 
   #print(npr.reset_to_default())
 
-  #print(npr.display_config())
+  print(npr.display_config())
 
 if __name__ == "__main__":
   # execute only if run as a script
