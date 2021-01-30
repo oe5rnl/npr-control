@@ -6,12 +6,9 @@
 #
 # A very simple Python control interface for New Packet radio (NPR).
 # 
-# V0.1a 2021-01-30
+# V0.1b 2021-01-30
 # - more testing needed
 # - ugly time.sleep
-#
-#
-
 
 
 import serial
