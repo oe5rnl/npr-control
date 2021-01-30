@@ -1,4 +1,4 @@
-# npr_control
+# npr-control
 Python NPR control lib
 
 A very simple Python control interface for New Packet radio (NPR).
